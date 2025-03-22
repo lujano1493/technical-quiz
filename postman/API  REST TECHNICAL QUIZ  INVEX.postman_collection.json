@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "287f9722-8c83-48ef-bc9a-31b23ac4adb8",
+		"name": "API  REST TECHNICAL QUIZ  INVEX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1835424",
+		"_collection_link": "https://equipo-mamalon.postman.co/workspace/Mamalones'-Team-Workspace~903d56bb-b144-4ba7-a997-3b5cef095bcb/collection/1835424-287f9722-8c83-48ef-bc9a-31b23ac4adb8?action=share&source=collection_link&creator=1835424"
+	},
+	"item": [
+		{
+			"name": "get all employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{test}}/employees?orderBy=id:desc&page=1&size=5",
+					"host": [
+						"{{test}}"
+					],
+					"path": [
+						"employees"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "id:desc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"listRequests\": [\r\n        {\r\n            \"firstName\": \"Fernando\",\r\n            \"secondName\": null,\r\n            \"lastName\": \"Lujano\",\r\n            \"maternalLastName\": \"Gutierrez\",\r\n            \"age\": 36,\r\n            \"gender\": \"male\",\r\n            \"dateOfBirth\": \"10-08-1988\",\r\n            \"position\": \"Back-End Java Developer\"\r\n        },\r\n        {\r\n            \"firstName\": \"Pablo\",\r\n            \"secondName\": \"Martín\",\r\n            \"lastName\": \"Roblez\",\r\n            \"maternalLastName\": \"Urtago\",\r\n            \"age\": null,\r\n            \"gender\": \"male\",\r\n            \"dateOfBirth\": \"21-09-1998\",\r\n            \"position\": \"Front-End Angular Developer\"\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test}}/employees",
+					"host": [
+						"{{test}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listRequests\": [\r\n        {\r\n            \"fistName\": null,\r\n            \"scondName\": \"{\",\r\n            \"lastName\": null,\r\n            \"maternalLastName\": \"%\",\r\n            \"age\": -1,\r\n            \"gender\": \"males\",\r\n            \"dateOfBirth\": \"10-10-1987\",\r\n            \"postion\": null\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Create OK Examplo 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listRequests\": [\r\n        {\r\n            \"firstName\": \"María\",\r\n            \"secondName\": \"Anabel\",\r\n            \"lastName\": \"Hernandez\",\r\n            \"maternalLastName\": \"Martínez\",\r\n            \"age\": 34,\r\n            \"gender\": \"female\",\r\n            \"dateOfBirth\": \"16-07-1994\",\r\n            \"position\": \"Project Manager\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Create Error Busness Logic",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listRequests\": [\r\n        {\r\n            \"firstName\": \"María\",\r\n            \"secondName\": \"Anabel\",\r\n            \"lastName\": \"Hernandez\",\r\n            \"maternalLastName\": \"Martínez\",\r\n            \"age\": 34,\r\n            \"gender\": \"female\",\r\n            \"dateOfBirth\": \"16-07-1994\",\r\n            \"position\": \"Project Manager\"\r\n        },\r\n         {\r\n            \"firstName\": \"María\",\r\n            \"secondName\": \"Anabel\",\r\n            \"lastName\": \"Hernandez\",\r\n            \"maternalLastName\": \"Martínez\",\r\n            \"age\": 34,\r\n            \"gender\": \"female\",\r\n            \"dateOfBirth\": \"16-07-1994\",\r\n            \"position\": \"Project Manager\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Update employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\": 1,\r\n    \"firstName\": \"María\",\r\n    \"secondName\": \"Anabel\",\r\n    \"lastName\": \"Hernandez\",\r\n    \"maternalLastName\": \"Martínez\",\r\n    \"age\":null,\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"16-07-1994\",\r\n    \"position\": \"Project Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test}}/employees",
+					"host": [
+						"{{test}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Bad Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\": -1,\r\n    \"firstName\": null,\r\n    \"secondName\": null,\r\n    \"lastName\": \"\",\r\n    \"maternalLastName\": null,\r\n    \"age\": null,\r\n    \"gender\": null ,\r\n    \"dateOfBirth\": \"\",\r\n    \"position\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Update Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\": 0,\r\n    \"firstName\": \"María\",\r\n    \"secondName\": \"Anabel\",\r\n    \"lastName\": \"Hernandez\",\r\n    \"maternalLastName\": \"Martínez\",\r\n    \"age\": -34,\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"16-07-1994\",\r\n    \"position\": \"Project Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Update Error Busness Logic",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\": 1,\r\n    \"firstName\": \"María\",\r\n    \"secondName\": \"Anabel\",\r\n    \"lastName\": \"Hernandez\",\r\n    \"maternalLastName\": \"Martínez\",\r\n    \"age\": 22,\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"16-07-1994\",\r\n    \"position\": \"Project Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{test}}/employees",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{test}}/employees/1",
+					"host": [
+						"{{test}}"
+					],
+					"path": [
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete employee Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{test}}/employees/0",
+							"host": [
+								"{{test}}"
+							],
+							"path": [
+								"employees",
+								"0"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

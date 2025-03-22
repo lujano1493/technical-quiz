@@ -1,0 +1,47 @@
+{"properties": [
+  {
+    "name": "sprindoc.openapi.dev.url",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.dev.url'"
+  },
+  {
+    "name": "sprindoc.openapi.contact.url",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.contact.url'"
+  },
+  {
+    "name": "sprindoc.openapi.contact.name",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.contact.name'"
+  },
+  {
+    "name": "sprindoc.openapi.contact.email",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.contact.email'"
+  },
+  {
+    "name": "sprindoc.openapi.dev.description",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.dev.description'"
+  },
+  {
+    "name": "sprindoc.openapi.pro.url",
+    "type": "java.lang.String",
+    "description": "A description for 'sprindoc.openapi.pro.url'"
+  },
+  {
+    "name": "api.controllers.employee.basePath",
+    "type": "java.lang.String",
+    "description": "A description for 'api.controllers.employee.basePath'"
+  },
+  {
+    "name": "api.controllers.employee.delete.path",
+    "type": "java.lang.String",
+    "description": "A description for 'api.controllers.employee.delete.path'"
+  },
+  {
+    "name": "api.controllers.employee.delete.pathVariable",
+    "type": "java.lang.String",
+    "description": "A description for 'api.controllers.employee.delete.pathVariable'"
+  }
+]}
